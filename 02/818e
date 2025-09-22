@@ -1,0 +1,22 @@
+public class MultiplesSum {
+    public static void main(String[] args) {
+        int limit = 1000;
+
+        // 1) egyszerű iteratív megoldás
+        int sumLoop = 0;
+        for (int i = 1; i < limit; i++) {
+            if (i % 3 == 0 || i % 5 == 0) sumLoop += i;
+        }
+        System.out.println("Iteratív összeg: " + sumLoop);
+
+        // 2) zárt-formulás (gyors) megoldás
+        System.out.println("Képlettel számolt összeg: " + sumOfMultiples(limit, 3)
+                           + sumOfMultiples(limit, 5) - sumOfMultiples(limit, 15));
+    }
+
+    // sum of multiples of k that are < limit
+    private static int sumOfMultiples(int limit, int k) {
+        int m = (limit - 1) / k;             // legnagyobb többszörös indexe
+        return k * m * (m + 1) / 2;          // k * (1+2+...+m)
+    }
+}
