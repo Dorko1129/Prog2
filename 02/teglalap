@@ -1,45 +1,27 @@
-import java.util.Scanner;
+class Teglalap
+{
+    public int a;
+    public int b;
 
-// A Teglalap osztály
-class Teglalap {
-    private int szelesseg;
-    private int magassag;
 
-    // Konstruktor
-    public Teglalap(int szelesseg, int magassag) {
-        this.szelesseg = szelesseg;
-        this.magassag = magassag;
-    }
-
-    // Kerület számítása
-    public int kerulet() {
-        return 2 * (szelesseg + magassag);
-    }
-
-    // Terület számítása
-    public int terulet() {
-        return szelesseg * magassag;
-    }
 }
+public class Main
+{
 
-// A főprogram
-public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args)
+    {
+        Teglalap t1 = new Teglalap();
+        t1.a = 6;
+        t1.b =10;
+        int eredmeny =kerulet(t1.a, t1.b);
+        System.out.println(eredmeny);
 
-        System.out.print("Kérem adja meg a téglalap szélességét (egész szám): ");
-        int szelesseg = sc.nextInt();
 
-        System.out.print("Kérem adja meg a téglalap magasságát (egész szám): ");
-        int magassag = sc.nextInt();
-
-        Teglalap teglalap = new Teglalap(szelesseg, magassag);
-
-        System.out.println("A(z) " + szelesseg + " x " + magassag + 
-                           " méretű téglalap kerülete: " + teglalap.kerulet());
-        System.out.println("A(z) " + szelesseg + " x " + magassag + 
-                           " méretű téglalap területe: " + teglalap.terulet());
-
-        sc.close();
     }
+
+    public static int kerulet(int a , int b)
+    {
+        return 2*(a+b);
+    }
+
 }
