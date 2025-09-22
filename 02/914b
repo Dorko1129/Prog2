@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+// A Circle osztály
+class Circle {
+    private double radius;
+
+    // Konstruktor
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Kerület számítása: 2 * π * r
+    public double kerulet() {
+        return 2 * Math.PI * radius;
+    }
+
+    // Terület számítása: π * r^2
+    public double terulet() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// A főprogram
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Kérem adja meg a kör sugarát (valós szám, pl. 2.5): ");
+        double r = sc.nextDouble();
+
+        Circle circle = new Circle(r);
+
+        System.out.printf("A %.2f sugarú kör kerülete: %.4f%n", r, circle.kerulet());
+        System.out.printf("A %.2f sugarú kör területe: %.4f%n", r, circle.terulet());
+
+        sc.close();
+    }
+}
