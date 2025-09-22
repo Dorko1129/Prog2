@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+// A Teglalap osztály
+class Teglalap {
+    private int szelesseg;
+    private int magassag;
+
+    // Konstruktor
+    public Teglalap(int szelesseg, int magassag) {
+        this.szelesseg = szelesseg;
+        this.magassag = magassag;
+    }
+
+    // Kerület számítása
+    public int kerulet() {
+        return 2 * (szelesseg + magassag);
+    }
+
+    // Terület számítása
+    public int terulet() {
+        return szelesseg * magassag;
+    }
+}
+
+// A főprogram
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Kérem adja meg a téglalap szélességét (egész szám): ");
+        int szelesseg = sc.nextInt();
+
+        System.out.print("Kérem adja meg a téglalap magasságát (egész szám): ");
+        int magassag = sc.nextInt();
+
+        Teglalap teglalap = new Teglalap(szelesseg, magassag);
+
+        System.out.println("A(z) " + szelesseg + " x " + magassag + 
+                           " méretű téglalap kerülete: " + teglalap.kerulet());
+        System.out.println("A(z) " + szelesseg + " x " + magassag + 
+                           " méretű téglalap területe: " + teglalap.terulet());
+
+        sc.close();
+    }
+}
