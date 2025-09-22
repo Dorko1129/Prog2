@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+// A Negyzet osztály
+class Negyzet {
+    private int oldal;
+
+    // Konstruktor
+    public Negyzet(int oldal) {
+        this.oldal = oldal;
+    }
+
+    // Kerület számítása
+    public int kerulet() {
+        return 4 * oldal;
+    }
+
+    // Terület számítása
+    public int terulet() {
+        return oldal * oldal;
+    }
+}
+
+// A főprogram
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Kérem adja meg a négyzet oldalhosszát (egész szám): ");
+        int oldal = sc.nextInt();
+
+        Negyzet negyzet = new Negyzet(oldal);
+
+        System.out.println("A(z) " + oldal + " hosszúságú oldalú négyzet kerülete: " + negyzet.kerulet());
+        System.out.println("A(z) " + oldal + " hosszúságú oldalú négyzet területe: " + negyzet.terulet());
+
+        sc.close();
+    }
+}
