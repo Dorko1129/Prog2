@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+// A Gomb osztály
+class Gomb {
+    private double radius;
+
+    // Konstruktor
+    public Gomb(double radius) {
+        this.radius = radius;
+    }
+
+    // Felszín számítása: 4 * π * r^2
+    public double felszin() {
+        return 4 * Math.PI * radius * radius;
+    }
+
+    // Térfogat számítása: (4/3) * π * r^3
+    public double terfogat() {
+        return (4.0 / 3.0) * Math.PI * radius * radius * radius;
+    }
+}
+
+// A főprogram
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Kérem adja meg a gömb sugarát (valós szám, pl. 3.5): ");
+        double r = sc.nextDouble();
+
+        Gomb gomb = new Gomb(r);
+
+        System.out.printf("A %.2f sugarú gömb felszíne: %.4f%n", r, gomb.felszin());
+        System.out.printf("A %.2f sugarú gömb térfogata: %.4f%n", r, gomb.terfogat());
+
+        sc.close();
+    }
+}
