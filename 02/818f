@@ -1,0 +1,32 @@
+public class SumSquareDifference {
+    public static void main(String[] args) {
+        int n = 100;
+
+        long sumSquares = sumOfSquares(n);
+        long squareSum = squareOfSum(n);
+
+        long difference = squareSum - sumSquares;
+
+        System.out.println("Négyzetek összege: " + sumSquares);
+        System.out.println("Összeg négyzete: " + squareSum);
+        System.out.println("Különbség: " + difference);
+    }
+
+    // első n szám négyzetösszege: 1^2 + 2^2 + ... + n^2
+    private static long sumOfSquares(int n) {
+        long sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += (long) i * i;
+        }
+        return sum;
+    }
+
+    // első n szám összegének négyzete: (1 + 2 + ... + n)^2
+    private static long squareOfSum(int n) {
+        long sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += i;
+        }
+        return sum * sum;
+    }
+}
